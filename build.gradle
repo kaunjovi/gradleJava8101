@@ -1,13 +1,37 @@
 apply plugin: 'java'
-apply plugin: 'application'
 
-mainClassName = 'fun.n.games.HelloWorld'
+version = '1.0'
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
 
+/**
+ * Where should we fetch the dependencies from?  
+ * Here are a few options. 
+ * mavenCentral()
+ * jcenter()
+ * maven { url "http://repo.mycompany.com/maven2" }
+ * ivy { url "http://repo.mycompany.com/repo" }
+ */
 repositories {
 	mavenCentral()
 }
 
+
+/**
+ * What are the different type of dependencies? 
+ * compile - are the stuff that you need to compile the code. Stuff that you have imported. 
+ * runtime
+ * testCompile -  
+ * testRuntime - 
+ */
 dependencies { 
 	compile group: 'org.slf4j', name:'slf4j-api', version: '1.7.2'
 	testCompile 'junit:junit:4.12' }
 
+/**
+ * If you want to run the application,
+ * first you have to declare that it is an application
+ * second you have to mention which is your main class
+ */
+apply plugin: 'application'
+mainClassName = 'fun.n.games.HelloWorld'
